@@ -1,0 +1,33 @@
+server:
+    port: 9090
+
+# 服务名称可自定义
+spring:
+    aop:
+        auto: true
+    application:
+        name: mybatis-plus-study
+    datasource:
+    #    本地数据库
+        url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+        username: username
+        password: password
+        driverClassName: com.mysql.cj.jdbc.Driver
+        maxActive: 10
+        initialSize: 5
+        minIdle: 2
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 300000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        #监控
+        filter:
+            wall:
+                enabled: true
+
